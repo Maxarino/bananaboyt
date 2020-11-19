@@ -1,0 +1,8 @@
+.DS_Store
+cogs/.DS_Store
+__pycache__/
+cogs/__pycache__/
+users.json
+hiddentoken.py
+.idea
+settings.json
