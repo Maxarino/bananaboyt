@@ -1,2 +1,1 @@
 discord
-numpy==1.8.0rc1
