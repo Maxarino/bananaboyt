@@ -1,6 +1,9 @@
 import discord
 import os
-import hiddentoken
+try:
+    import hiddentoken
+except:
+    pass
 from discord.ext import commands, tasks
 
 token = os.environ.get('TOKEN')
