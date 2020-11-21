@@ -8,7 +8,7 @@ class Games(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='coinflip', help='flips a coin')
+    @commands.command(name='coinflip', help='flips a coin', aliases=['cf'])
     async def coinflip(self, ctx):
         embed = discord.Embed(color=discord.Color.gold())
 
