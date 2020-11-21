@@ -3,6 +3,7 @@ import os
 import hiddentoken
 from discord.ext import commands, tasks
 
+token = os.environ.get('TOKEN')
 bot = commands.Bot(command_prefix='.')
 bot.remove_command('help')
 
@@ -82,4 +83,7 @@ async def stop(ctx):
 
 
 if __name__ == '__main__':
-    bot.run(hiddentoken.token)
+    try:
+        bot.run(hiddentoken.token)
+    except:
+        bot.run(str(token))
