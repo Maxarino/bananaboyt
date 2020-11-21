@@ -30,7 +30,9 @@ class Misc(commands.Cog):
 
     @commands.command(name='ping', hidden=True)
     async def ping(self, ctx):
-        await ctx.send(f'{round(self.bot.latency * 1000)}ms')
+        ping = round(self.bot.latency * 1000)
+        show_ping = discord.Embed(color=discord.Color.gold(), description=f'{ping}ms')
+        await ctx.send(embed=show_ping)
 
     @commands.command(name='id', help='returns id of member')
     async def id(self, ctx, *, member: discord.Member = None):
