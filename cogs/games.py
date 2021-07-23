@@ -18,7 +18,7 @@ class Games(commands.Cog):
             embed.set_image(url=f'https://cdn.discordapp.com/attachments/254009811216105473/779829162097377290/tails.png')
             embed.set_footer(text='Tails')
         else:
-            embed.set_image(url=f'https://cdn.discordapp.com/attachments/254009811216105473/779829170154897473/heads.png')
+            embed.set_image(url=f'https://cdn.discordapp.com/attachments/254009811216105473/867157004971933696/heads.png')
             embed.set_footer(text='Heads')
 
         await ctx.send(embed=embed)
