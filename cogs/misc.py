@@ -34,7 +34,7 @@ class Misc(commands.Cog):
         show_ping = discord.Embed(color=discord.Color.gold(), description=f'{ping}ms')
         await ctx.send(embed=show_ping)
 
-    @commands.command(name='id', help='returns id of member')
+    @commands.command(name='id', help='returns the discord id of <member>')
     async def id(self, ctx, *, member: discord.Member = None):
         if member is None:
             member = ctx.author
@@ -44,7 +44,7 @@ class Misc(commands.Cog):
         show_id.set_footer(text=f'{member}', icon_url=f'{member.avatar_url}')
         await ctx.send(embed=show_id)
 
-    @commands.command(name='avatar', help='returns avatar of member')
+    @commands.command(name='avatar', help='returns the avatar of <member>')
     async def avatar(self, ctx, *, member: discord.Member = None):
         if member is None:
             member = ctx.author

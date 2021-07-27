@@ -10,7 +10,7 @@ class LevelSystem(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 
-    @commands.command(name='xp', help='shows how many xp points member has', aliases=['exp', 'experience'])
+    @commands.command(name='xp', help='displays the amount of xp points <member> has acquired', aliases=['exp', 'experience'])
     async def xp(self, ctx, *, member: discord.Member = None):
 
         b = False
@@ -29,7 +29,7 @@ class LevelSystem(commands.Cog):
                     embed.description = f"{member.name} has **{users[f'{member.guild.id}'][f'{member.id}']['xp']} xp**."
                 await ctx.send(embed=embed)
 
-    @commands.command(name='level', help='shows current level of member', aliases=['lvl'])
+    @commands.command(name='level', help='displays the current level of <member>', aliases=['lvl'])
     async def level(self, ctx, *, member: discord.Member = None):
 
         b = False
@@ -49,7 +49,7 @@ class LevelSystem(commands.Cog):
                     embed.description = f"{member.name} is **level {users[f'{member.guild.id}'][f'{member.id}']['level']}**."
                 await ctx.send(embed=embed)
 
-    @commands.command(name='leaderboard', help='shows chat leaderboard', aliases=['lb'])
+    @commands.command(name='leaderboard', help='displays server chat leaderboard', aliases=['lb'])
     async def leaderboard(self, ctx):
 
         with open('users.json', 'r') as f:
