@@ -4,11 +4,12 @@
 * Default command prefix: `.`
 
 -**Functionality**-
-* `coinflip` : flips a coin
+* `poll <args>` : creates a poll with maximum 5 options
+  * An example of a proper use of the command is: `.poll "Are you Canadian?" Yes No`
+    <br/> ![example](example.png)
 * `leaderboard` : displays server chat leaderboard
 * `level <member>` : displays the current level of `<member>`
 * `xp <member>` : displays the amount of xp points `<member>` has acquired
 * `avatar <member>` : returns the avatar of `<member>`
 * `id <member>` : returns the discord id of `<member>`
-* `poll <args>` : creates a poll with maximum 5 options
-  * An example of a proper use of the command is: `.poll "Are you Canadian?" Yes No`
+* `coinflip` : flips a coin
