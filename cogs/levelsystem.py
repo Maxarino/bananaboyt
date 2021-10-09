@@ -64,21 +64,17 @@ class LevelSystem(commands.Cog):
 
             embed = discord.Embed(color=discord.Color.gold())
 
-            if num_members >= 1:
-                first = self.bot.get_user(int(top[0].userid))
-                embed.description = f':one: {first} | **level {top[0].level}**\n\n'
-                if num_members >= 2:
-                    second = self.bot.get_user(int(top[1].userid))
-                    embed.description += f':two: {second} | **level {top[1].level}**\n\n'
-                    if num_members >= 3:
-                        third = self.bot.get_user(int(top[2].userid))
-                        embed.description += f':three: {third} | **level {top[2].level}**\n\n'
-                        if num_members >= 4:
-                            fourth = self.bot.get_user(int(top[3].userid))
-                            embed.description += f':four: {fourth} | **level {top[3].level}**\n\n'
-                            if num_members >= 5:
-                                fifth = self.bot.get_user(int(top[4].userid))
-                                embed.description += f':five: {fifth} | **level {top[4].level}**'
+            places_description = []
+            places = ["one", "two", "three", "four", "five"]
+
+            for (index, place) in enumerate(places):
+                if num_members >= index+1:
+                    gamer_id = self.bot.get_user(int(top[index].userid))
+                    places_description.append(f':{place}: {gamer_id} | **level {top[index].level}**')
+                else:
+                    break
+
+            embed.description = '\n\n'.join(places_description)
 
             await ctx.send(embed=embed)
 
