@@ -63,18 +63,15 @@ class LevelSystem(commands.Cog):
             top = sorted(leaderboards, key=lambda x: x.xp, reverse=True)
 
             embed = discord.Embed(color=discord.Color.gold())
+            embed.description = ""
 
-            places_description = []
             places = ["one", "two", "three", "four", "five"]
-
-            for (index, place) in enumerate(places):
-                if num_members >= index+1:
-                    gamer_id = self.bot.get_user(int(top[index].userid))
-                    places_description.append(f':{place}: {gamer_id} | **level {top[index].level}**')
+            for (i, place) in enumerate(places):
+                if num_members >= i + 1:
+                    user_id = self.bot.get_user(int(top[i].userid))
+                    embed.description += f':{place}: {user_id} | **level {top[i].level}**\n\n'
                 else:
                     break
-
-            embed.description = '\n\n'.join(places_description)
 
             await ctx.send(embed=embed)
 
