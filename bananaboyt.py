@@ -86,7 +86,7 @@ async def reload(ctx, extension):
 @bot.command(name='stop', hidden=True)
 @is_me()
 async def stop(ctx):
-    await bot.logout()
+    await bot.close()
 
 
 if __name__ == '__main__':
